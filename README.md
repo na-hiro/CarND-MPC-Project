@@ -25,11 +25,12 @@ v_[t+1] = v[t] + a[t] * dt
 cte[t+1] = f(x[t]) - y[t] + v[t] * sin(epsi[t]) * dt  
 epsi[t+1] = psi[t] - psides[t] + v[t] * delta[t] / Lf * dt  
 
+
 ### Timestep Length and Elapsed Duration (N & dt)
 * Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
 
-Time step length and frequency In this project, the waiting time is set to 100 ms. Therefore, in order to properly control the vehicle, it must be estimated at least 100 ms ago. Therefore, dt was set to 100 ms.
-Latency is 100 [ms], but decreasing dt increases the resolution, but N needs to be lengthened accordingly. If N is increased, in that case, processing time is required. When dt is increased, the deviation of the prediction result becomes large. Also, when estimating a vehicle, it is not necessary to estimate for a long time, and 1000 ms (100 x 10 ms) was appropriate.
+Time step length and frequency In this project, the waiting time is set to 100[ms]. Therefore, in order to properly control the vehicle, it must be estimated at least 100[ms] ago. Therefore, dt was set to 100[ms].
+Latency is 100 [ms], but decreasing dt increases the resolution, but N needs to be lengthened accordingly. If N is increased, in that case, processing time is required. When dt is increased, the deviation of the prediction result becomes large. Also, when estimating a vehicle, it is not necessary to estimate for a long time, and 1000[ms] (100[ms] x 10) was appropriate.
 Considering the case where the estimation period is set to 1000 [ms] by combination of other values. However, stable results could not be confirmed.
 For exsample, (dt=0.25,N=4)/(dt=0.05, N=20), and so on.
 
@@ -52,7 +53,7 @@ The student implements Model Predictive Control that handles a 100 millisecond l
 Approaches to dealing with latency are largely the following two.
 Change the equation of motion to one that takes latency into account as follows.
 
-// Predict the state after 100 ms
+// Predict the state after 100[ms]
 double pred_x = v * delay_t;  
 double pred_y = 0;  
 double pred_psi = - v * steer_value * delay_t / Lf;  
