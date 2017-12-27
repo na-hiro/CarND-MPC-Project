@@ -47,8 +47,7 @@ ptsy[i] = (shift_x * sin(0-psi) + shift_y * cos(0-psi));
 
 
 ### Model Predictive Control with Latency
-* 	
-The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
+* The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
 
 Approaches to dealing with latency are largely the following two.
 Change the equation of motion to one that takes latency into account as follows.
