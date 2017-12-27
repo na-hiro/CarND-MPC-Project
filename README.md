@@ -52,7 +52,7 @@ ptsy[i] = (shift_x * sin(0-psi) + shift_y * cos(0-psi));
 Approaches to dealing with latency are largely the following two.
 Change the equation of motion to one that takes latency into account as follows.
 
-// Predict the state after 100[ms]
+// Predict the state after 100[ms]  
 double pred_x = v * delay_t;  
 double pred_y = 0;  
 double pred_psi = - v * steer_value * delay_t / Lf;  
